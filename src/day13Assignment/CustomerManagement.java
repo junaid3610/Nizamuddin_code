@@ -146,7 +146,7 @@ ArrayList<Customer> customers;
 	void printMenu() {
 		int userChoice = 0;
 		do {
-			System.out.println("--------------------");
+			System.out.println("=============================");
 			System.out.println("If you want to add a new customer PRESS 1");
 			System.out.println("If you want to Update the customer details PRESS 2");
 			System.out.println("If you want to Delete a customer PRESS 3");
@@ -154,7 +154,7 @@ ArrayList<Customer> customers;
 			System.out.println("If you want to Print the given customer detail PRESS 5");
 			System.out.println("If you want to compare Compare customer PRESS 6");
 			System.out.println("PRESS 7 for EXIT");
-			System.out.println("--------------------");
+			System.out.println("======================================");
 			userChoice  = sc.nextInt();
 			switch (userChoice ) {
 			case 1:
@@ -180,7 +180,7 @@ ArrayList<Customer> customers;
 				System.out.println("exit.....");
 				break;
 			default:
-				System.out.println("Invalid Entry.. Try again");
+				System.out.println("Invalid Entry.");
 				break;
 			}
 			
