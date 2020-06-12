@@ -41,7 +41,6 @@ public class CollectionExample {
 		ce.addMembers();
 		ce.printCollection();
 		ce.sumCollection();
-
 	}
 
 }

@@ -11,17 +11,6 @@ public class FindLettersInString {
 		
 	}
 	
-	public String getA() {
-		return a;
-	}
-
-	public String getB() {
-		return b;
-	}
-
-	public String getStr() {
-		return str;
-	}
 
 	void getInputs() {
 		System.out.println("Enter the string  ");
@@ -36,15 +25,21 @@ public class FindLettersInString {
 		for (int i=0; i<str.length(); i++)
 		{
 			if ( a.equalsIgnoreCase(str.substring(i, i+1))){
-				if(outputStr != null)
+				if(outputStr != null && !(outputStr.contains(a)))
 					outputStr = outputStr+a;
 				else
+				{
+					//if(!(outputStr.contains(a)))
 					outputStr = a;
+				}
 			}else if ( b.equalsIgnoreCase(str.substring(i, i+1))){
-				if(outputStr != null)
+				if(outputStr != null && !(outputStr.contains(b)))
 				outputStr = outputStr+b;
 				else
+				{
+					//if(!(outputStr.contains(b)))
 					outputStr = b;
+				}
 			}
 		}
 		
@@ -60,6 +55,8 @@ public class FindLettersInString {
 		case 2: System.out.println("Alphabets present");
 		System.out.println("First "+outputStr.charAt(0)+" then "+outputStr.charAt(1));
 		break;
+		default:
+			System.out.println("Too many letters entered");
 		}
 		}
 		else

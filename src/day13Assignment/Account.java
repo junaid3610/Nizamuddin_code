@@ -38,8 +38,7 @@ public class Account{
 		Account obj= new Account();
 		obj.addMembers();
 		obj.printCollection();
-		
-
+	
 	}
 
 }
