@@ -9,11 +9,57 @@ public abstract class Account {
 	String name,phone,dob,accType;
 	double balance;
 	Scanner scanner;
+	BankTransactions bObj;
 	ArrayList<Integer> accountList;
+	//contructor to perform
 	Account(){
 		scanner = new Scanner(System.in);
 		accountList = new ArrayList<Integer>();
-		
+		 bObj = new BankTransactions();
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public void setAccType(String accType) {
+		this.accType = accType;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
 	}
 
 	double checkBalance() {
@@ -26,9 +72,10 @@ public abstract class Account {
 	public String getAccType() {
 		return accType;
 	}
-
+	//Allows user to give input
 	void takeAccountDetails(){
 		String userChoice = "no";
+		
 			do {
 		System.out.println("Please enter the type of account");
 		accType = scanner.nextLine();
@@ -49,14 +96,18 @@ public abstract class Account {
 		System.out.println("Please enter the Initial Amount for deposit");
 		balance =scanner.nextFloat();
 		scanner.nextLine();
+		bObj.populateAccounts(accountNumber, accType, name, dob, phone, balance);
 		System.out.println("Created");
 		}
 		System.out.println("Do u want to enter another??");
 		userChoice = scanner.nextLine();
 		}while( userChoice.equalsIgnoreCase("yes"));
 		
-		
+			bObj.userOperation();
 	}
-		
+
+	
+	
+
 	
 }
