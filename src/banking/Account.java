@@ -66,6 +66,10 @@ public abstract class Account {
 		return accountNumber;
 	}
 
+	public int getAge() {
+		return age;
+	}
+
 	double checkBalance() {
 		
 	return balance;	
@@ -100,7 +104,8 @@ public abstract class Account {
 		System.out.println("Please enter the Initial Amount for deposit");
 		balance =scanner.nextFloat();
 		scanner.nextLine();
-		bObj.populateAccounts(accountNumber, accType, name, dob, phone, balance);
+		age = bObj.ageCalculation(dob);
+		bObj.populateAccounts(accountNumber, accType, name, dob, phone, balance, age);
 		System.out.println("Created");
 		}
 		System.out.println("Do u want to enter another yes/no??");

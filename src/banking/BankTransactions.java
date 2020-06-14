@@ -2,7 +2,7 @@ package banking;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -58,8 +58,8 @@ void userOperation()
 						System.out.println(obj.getAccType()+
 						"\r\nAccount Number : "+accNo+
 						"\r\nName : "+obj.getName()+
-						"\r\nAge : 31\r\n" + 
-						"Phone : "+obj.getPhone()+
+						"\r\nAge : " +obj.getAge()+ 
+						"\r\nPhone : "+obj.getPhone()+
 						"\r\nBalance : "+obj.getBalance());
 						break;
 				case 3 : 
@@ -72,27 +72,28 @@ void userOperation()
 	}while( addChoice.equalsIgnoreCase("yes"));
 }
 
-int ageCalculation (LocalDate dob) {
+int ageCalculation (String dob) {
 	int age = 0;
-	  LocalDate now = dob; //gets localDate
-	  Period diff = Period.between(dob, now); //difference between the dates is calculated
-	  //System.out.println(diff.getYears() + "years" + diff.getMonths() + "months" + diff.getDays() + "days");
-
-	
-	return age;
+	//direct age calculation 
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		//convert String to LocalDate
+		LocalDate localDate = LocalDate.parse(dob, formatter);
+	  LocalDate now = LocalDate.now(); //gets localDate
+	  Period diff = Period.between(localDate, now); //difference between the dates is calculated
+	  age = diff.getYears();
+	 return age;
 }
 
 	//adds all accounts created to ArrayList accDetails	
-	void populateAccounts(int accountNumber, String accType, String name, String dob, String phone, double balance)
+	void populateAccounts(int accountNumber, String accType, String name, String dob, String phone, double balance, int age)
 	{
-		//int age = ageCalculation(dob);
 		Account obj = new SavingsAccount();
 		obj.setAccountNumber(accountNumber);
 		obj.setAccType(accType);
 		obj.setBalance(balance);
 		obj.setName(name);
 		obj.setDob(dob);
-		//obj.setAge(age);
+		obj.setAge(age);
 		obj.setPhone(phone);
 		accDetails.add(obj);
 		
@@ -110,6 +111,7 @@ int ageCalculation (LocalDate dob) {
 	public static void main(String[] a) {
 		Account sObj = new SavingsAccount();
 		sObj.takeAccountDetails();
+
 		
 		
 	}
