@@ -12,7 +12,8 @@ public class SavingsAccount extends Account {
 		{
 			if((another.checkBalance()-amount)>5000.00) {
 				another.setBalance(another.checkBalance()-amount);
-							}
+				System.out.println("Withdrawal successfull.\nThe available balance is "+another.checkBalance());
+			}
 			else{
 				System.out.println("Withdraw not possible. Insuff. Balance");
 			}
@@ -20,8 +21,7 @@ public class SavingsAccount extends Account {
 		else if(type.equalsIgnoreCase("2"))
 		{
 			another.setBalance(amount+another.checkBalance());
-			System.out.println(another.checkBalance());
-
+			System.out.println("Deposit success...!!!\nThe available balance is "+another.checkBalance());
 		}else
 			System.out.println("Incorrect choice");
 		

@@ -11,7 +11,7 @@ public abstract class Account {
 	Scanner scanner;
 	BankTransactions bObj;
 	ArrayList<Integer> accountList;
-	//contructor to perform
+	//constructor to perform initializations
 	Account(){
 		scanner = new Scanner(System.in);
 		accountList = new ArrayList<Integer>();
@@ -32,6 +32,10 @@ public abstract class Account {
 
 	public void setDob(String dob) {
 		this.dob = dob;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 	public void setAccType(String accType) {
@@ -89,7 +93,7 @@ public abstract class Account {
 			accountList.add(accountNumber);
 		System.out.println("please enter name");
 		name = scanner.nextLine();
-		System.out.println("Please enter Date of Birth");
+		System.out.println("Please enter Date of Birth DD/MM/YYYY");
 		dob= scanner.nextLine();
 		System.out.println("Please enter Phone number");
 		phone = scanner.nextLine();
@@ -99,7 +103,7 @@ public abstract class Account {
 		bObj.populateAccounts(accountNumber, accType, name, dob, phone, balance);
 		System.out.println("Created");
 		}
-		System.out.println("Do u want to enter another??");
+		System.out.println("Do u want to enter another yes/no??");
 		userChoice = scanner.nextLine();
 		}while( userChoice.equalsIgnoreCase("yes"));
 		
