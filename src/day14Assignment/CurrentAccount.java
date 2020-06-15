@@ -1,4 +1,4 @@
-package banking;
+package day14Assignment;
 
 public class CurrentAccount extends Account {
 	//override to perform

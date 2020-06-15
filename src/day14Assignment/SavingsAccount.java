@@ -1,4 +1,4 @@
-package banking;
+package day14Assignment;
 
 public class SavingsAccount extends Account {
 	//construtor to perform

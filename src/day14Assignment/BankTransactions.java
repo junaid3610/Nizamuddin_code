@@ -1,4 +1,4 @@
-package banking;
+package day14Assignment;
 
 import java.util.ArrayList;
 import java.util.Scanner;
