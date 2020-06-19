@@ -3,7 +3,7 @@ package day15Work;
 import java.util.*;
 import java.io.*;
 
-public class ExceptionExample{
+public class ExceptionExample {
 	
 	HashMap<Integer,String> myMap;
 	
@@ -17,8 +17,13 @@ public class ExceptionExample{
 			myMap.put(102,"Somu");
 			myMap.put(103,"Bimu");
 			myMap.put(103,"Lomu");
-			String data = myMap.get(101).toLowerCase();
-			int result =100/(100-100);
+			try {
+				String data = myMap.get(101).toLowerCase();
+				int result =100/(100-100);
+			}
+			catch(ArithmeticException e) {
+				System.out.println("Invalid number operation");
+			}
 			System.out.println("Map filled");
 		} 
 		catch (NullPointerException e) {
@@ -41,7 +46,7 @@ public class ExceptionExample{
 	
 	
 	void fileRead() {
-		File file = new File("‪C:\\Users\\nizamuddinn\\Desktop\\SQL test.txt");
+		File file = new File("E:\\sony lap backup\\d drive\\Corp\\SpineBiz\\Day5-Q.txt");
 		Scanner scanner;
 		try {
 			scanner = new Scanner(file);
@@ -56,26 +61,31 @@ public class ExceptionExample{
 		
 	}
 	
-	void checkVoteEligibility() {
+	void checkVoteEligibility() throws MyAgeException {
 		int age = 12;
-		try {
+		//try {
 			 if(age<18)
 				throw new MyAgeException();
 			System.out.println("You can vote...");
-			} catch (MyAgeException e) {
+			/*} catch (MyAgeException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 	
 	}
 	
 	public static void main(String[] args) {
 		
 		ExceptionExample ee = new ExceptionExample();
-		ee.addDataToMap();
+		/*ee.addDataToMap();
 		ee.printMap();
-		ee.fileRead();
-		ee.checkVoteEligibility();
+		ee.fileRead();*/
+		try {
+			ee.checkVoteEligibility();
+		} catch (MyAgeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -114,7 +114,7 @@ public class Maths {
 		System.out.println("Result= "+div);
 		break;
 		case 5:
-			Maths sce = new Maths();
+			
 System.out.println("------------EXIT---------------");
 		System.exit(0);
 		

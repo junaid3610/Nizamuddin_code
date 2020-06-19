@@ -1,4 +1,4 @@
-
+package myBank;
 public class Animal {
 	String type;
 	Animal(){
