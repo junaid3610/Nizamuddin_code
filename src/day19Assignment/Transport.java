@@ -23,7 +23,11 @@ void ChooseActionForUser() {
 		System.out.println("Press 8 to DeleteEmployee");
 		System.out.println("Press 9 to Assign Driver For Bus");
 		System.out.println("Press 10 to AssignBusForEmployee");
+		System.out.println("Press 11 to Print bus details");
+		System.out.println("Press 12 to print driver details");
+		System.out.println("Press 13 to print Employee details");
 		System.out.println("Press 0 Exit");
+	
 		System.out.println("--------------------");
 		userChoice  = scanner.nextInt();
 		switch (userChoice ) {
@@ -56,26 +60,34 @@ void ChooseActionForUser() {
 			break;
 		case 10:
 			getEmployeeDetailsfromUser();
-			break;	
+			break;
+		case 11:
+			printbusaccount();
+			break;
+		case 12:
+			printdriveraccount();
+			break;
+		case 13:
+			printEmloyeeaccount();
 		case 0:
-			System.out.println("Exiting...../n Thankyou");
+			System.out.println("Exiting..... Thankyou");
 			break;
 		default:
 			System.out.println("Invalid option.. Please press the correct number");
 			break;
 		}
 		
-	} while (userChoice!=11);
+	} while (userChoice!=0);
 	
 }
 public static void main(String[] args) {
 	Transport obj= new Transport();
-	/*mudinchu.adddriverAccounts();
-	mudinchu.addbusAccounts();	
-	mudinchu.addEmployeeAccounts();
-	mudinchu.printdriveraccount();
-	mudinchu.printbusaccount();
-	mudinchu.printEmloyeeaccount();*/
+	/*obj.adddriverAccounts();
+	obj.addbusAccounts();	
+	obj.addEmployeeAccounts();*/
+	obj.printdriveraccount();
+	obj.printbusaccount();
+	obj.printEmloyeeaccount();
 	obj.ChooseActionForUser();
 	
 }

@@ -50,7 +50,6 @@ public void setDob(String dob) {
 
 Employee(int Id,int Age,String Name,String Phone,String Dob){
 	this.Age=Age;
-	//this.dob=dob;
 	this.Id=Id;
 	this.Name=Name;
 	this.Phone=Phone;

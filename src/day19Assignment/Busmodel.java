@@ -63,8 +63,9 @@ Busmodel(int busid,String busNumber,String source,int capacity,int FilledStatus)
 	 source=scanner.nextLine();
 	 System.out.println("Enter the Bus capacity");
 	 capacity=scanner.nextInt();
-	 System.out.println("Enter the Filled Status");
-	 FilledStatus=scanner.nextInt();
+		 System.out.println("Enter the Filled Status");
+		 FilledStatus=scanner.nextInt();	 
+
 	 if(FilledStatus<capacity) {
 		 System.out.println("Bus filled");
 	 }else {

@@ -16,7 +16,7 @@ public class Driver {
 	
 	int driverid;
 	String drivername,driverphone;
-	boolean Busallocated;
+	boolean busAllocated;
 	
 	public int getDriverid() {
 		return driverid;
@@ -43,10 +43,10 @@ public class Driver {
 	}
 
 	public boolean isBusallocated() {
-		return Busallocated;
+		return busAllocated;
 	}
 	public void setBusallocated(boolean busallocated) {
-		Busallocated = busallocated;
+		busAllocated = busallocated;
 	}
 
 	Driver(int driverid,String drivername,String driverphone,boolean Busallocated){
