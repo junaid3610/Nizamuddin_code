@@ -96,12 +96,12 @@ public class Transport {
 				System.out.println("No such driver please try again from start");
 				compareDrivers();
 			}
-			System.out.println("Please enter the second customer id to be compared");
+			System.out.println("Please enter the second driver id to be compared");
 			id2 = scanner.nextInt();
 			d2 = findDriverIndex(id2);
 			if(d2==null)
 			{
-				System.out.println("No such customer please try again from start");
+				System.out.println("No such driverid please try again from start");
 				compareDrivers();
 			}
 			if(d1.equals(d2))
@@ -130,7 +130,7 @@ public class Transport {
 				System.out.println("--------------------");
 			}
 		}
-		public void printCustomer() {
+		public void printDriver() {
 			int id1=0;
 			System.out.println("Please enter the driver id to be printed");
 			id1 = scanner.nextInt();
@@ -171,7 +171,7 @@ public class Transport {
 				String drivername = scanner.nextLine();
 				d1.setdriverName(drivername);
 				System.out.println("Update success");
-				System.out.println("The updated customer details");
+				System.out.println("The updated details");
 				System.out.println(d1);
 				System.out.println("--------------------");
 				
@@ -205,8 +205,9 @@ public class Transport {
 					printAllDriver();
 					break;
 				case 5:
-					printCustomer();
+					printDriver();
 					break;
+			
 				case 6:
 					compareDrivers();
 					break;

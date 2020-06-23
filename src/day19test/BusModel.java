@@ -47,6 +47,7 @@ void assignDriver(ArrayList<Driver> driversList) {
 	 for (Driver dObj:driversList) {
 		 if(dObj.getdriverId()==driverId && dObj.isBusAllocated() == false) {
 			 dObj.setBusAllocated(true);
+			 System.out.println(dObj.getdriverName()+" is assigned to this bus");
 		 }
 	 }
 }

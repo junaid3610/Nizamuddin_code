@@ -1,5 +1,8 @@
 package day19test;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,6 +29,17 @@ public class Employee extends Transport {
 		}
 		System.out.println("Bus "+busid+ " assigned");
 	}
+	private int ageCalculation(String dob) {
+		// TODO Auto-generated method stub
+		int age = 0;
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	    LocalDate localDate = LocalDate.parse(dob, formatter);
+	LocalDate now = LocalDate.now();
+	Period diff = Period.between(localDate, now); 
+	age = diff.getYears();
+	return age;
+		
+	}
 	
 	void getemployeeDetails(ArrayList<BusModel> busList) {
 		System.out.println("Please enter the employee id");
@@ -40,10 +54,19 @@ public class Employee extends Transport {
 		//System.out.println(maskString(phone, 0, 4, '*') );
 		phone = scanner.nextLine();
 		System.out.println("Please enter Date of Birth DD/MM/YYYY");
-
 		dob= scanner.nextLine();
+		age=ageCalculation(dob);
+
+		
 	assignBus(busList);
 }
+	public void printEmployeeDetails() {
+		System.out.println("Emp id -"+empid);
+		System.out.println("Emp name -"+name);
+		System.out.println("Emp phone number -"+phone);
+		System.out.println("Emp age -"+age);
+		
+	}
 	
 	
 	

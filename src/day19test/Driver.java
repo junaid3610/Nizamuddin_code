@@ -1,7 +1,7 @@
 package day19test;
 import java.util.Scanner;
 
-import java.util.ArrayList;
+
 
 public class Driver {
 
@@ -59,10 +59,14 @@ void GetDriverDetailsFromUser() {
 		driverPhone = scanner.nextLine(); 
 			
 	}
- @Override
-	public String toString() {
-			return "Driver ID "+driverId+"\nDriver Name "+driverName+"\nCustomer phone"+driverPhone;
-	}
+	
+	  @Override public String toString() {
+		  String option = "Driver is not allocated to any bus";
+		  if(busAllocated == true)
+			  option ="Driver is allocated to a bus";
+		  return "Driver ID "+driverId+"\nDriver Name "+driverName+"\nPhone"+driverPhone+"\n"+option; 
+		  }
+	 
 
 	@Override
     public boolean equals(Object obj) {
@@ -75,3 +79,4 @@ void GetDriverDetailsFromUser() {
 	}
 
 }
+
