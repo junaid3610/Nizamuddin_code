@@ -124,13 +124,11 @@ public class Driver {
     Driver finddriverIndex(int id)
 	{
 		for(Driver driv :driverlists) {
-			if(driv != null)
-			{
-				if(driv.getDriverid()==driverid)
+				if(driv.getDriverid()==id)
 				{
 					return driv;
 				}
-			}
+			
 		}
 		return null;
 	}
@@ -158,8 +156,9 @@ public class Driver {
     
     void editDriver() {
 		int driverid1=0;
-		System.out.println("Please enter the age to be Edit");
+		System.out.println("Please enter the driver id to be Edit");
 		driverid1 = scanner.nextInt();
+		scanner.nextLine();
 		Driver m1 = finddriverIndex(driverid1);
 		System.out.println("The details for Edition");
 		if(m1==null)
@@ -173,7 +172,6 @@ public class Driver {
 			
 			System.out.println("Please enter the name for Edit");
 			String drivername = scanner.nextLine();
-			scanner.nextLine();
 			System.out.println("Please enter the phone for Add");
 			String driverphone = scanner.nextLine();
 			
